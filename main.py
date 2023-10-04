@@ -41,6 +41,9 @@ def process_file(file, path, sorted_path, ignore_folders):
     filename, extension = os.path.splitext(file)
     extension = extension[1:]
     script_filename = os.path.basename(__file__)
+    
+    if extension == "":
+        extension = "Other"
 
     if file == script_filename:
         print(f"{file} is this script file. Skipping...")
